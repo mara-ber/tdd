@@ -1,4 +1,7 @@
 function rps(left, right) {
+    if (left === right) {
+        return "draw";
+    }
     return (
         (left === "rock" && right === "scissors")
         || (left === "scissors" && right === "paper")
@@ -62,4 +65,11 @@ describe("rock, paper, scissors", () => {
 
         expect(result).toBe("right");
     });
+
+    ["rock", "paper", "scissors"].forEach((both) => {
+        it(`should say draw for ${both} vs. ${both}`, () => {
+            expect(rps(both, both)).toBe("draw");
+        });
+    });
+
 })

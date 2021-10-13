@@ -1,15 +1,11 @@
-// it function (provided by jest) to register a test
-// passing name og the test (as a string) and the body of the test as a function
-it("should work", () => {
-    //establish expectation
-    // arrange ('given') set up preconditions
-    const left = 1;
-    const right = 2;
 
-    // act ('when') do some work
-    const result = left + right;
+describe("rock, paper, scissors", () => {
+    it("should say left wins for rock vs. scissors", () => {
+        const left = "rock";
+        const right = "scissors";
 
-    // assert ('then') make sure that work was done correctly
-    expect(result).toBe(3);
-});
+        const outcome = rps(left, right);
 
+        expect(outcome).toBe("left");
+    })
+})

@@ -53,4 +53,13 @@ describe("rock, scissors, paper", () => {
 
         expect(result).toBe("left");
     });
+
+    it("right should win for rock vs. paper", () => {
+        const left = "rock";
+        const right = "paper";
+
+        const result = game(left, right);
+
+        expect(result).toBe("right");
+    });
 })

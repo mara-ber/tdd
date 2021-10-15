@@ -1,5 +1,5 @@
 function game(left, right) {
-    return right === "rock" ? "left" : "right";
+    return right === "scissors" ? "right" : "left";
 }
 
 
@@ -16,6 +16,15 @@ describe("rock, scissors, paper", () => {
     it("left should win for paper vs. rock", () => {
         const left = "paper";
         const right = "rock";
+
+        const result = game(left, right);
+
+        expect(result).toBe("left");
+    });
+
+    it("left should win for scissors vs. paper", () => {
+        const left = "scissors";
+        const right = "paper";
 
         const result = game(left, right);
 

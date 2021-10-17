@@ -6,6 +6,7 @@ function game(left, right) {
         (left === "rock" && right === "scissors")
         || (left === "scissors" && right === "paper")
         || (left === "paper" && right === "rock")
+        || (left === "spock")
     )
         ? "left" : "right";
 }
@@ -64,6 +65,15 @@ describe("rock, scissors, paper", () => {
         const result = game(left, right);
 
         expect(result).toBe("right");
+    });
+
+    it("left should win for spock vs. scissors", () => {
+        const left = "spock";
+        const right = "scissors";
+
+        const result = game(left, right);
+
+        expect(result).toBe("left");
     });
 
     ["paper", "scissors", "rock"].forEach((both) => {

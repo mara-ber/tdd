@@ -76,6 +76,15 @@ describe("rock, scissors, paper", () => {
         expect(result).toBe("left");
     });
 
+    it("left should win for spock vs. rock", () => {
+        const left = "spock";
+        const right = "rock";
+
+        const result = game(left, right);
+
+        expect(result).toBe("left");
+    });
+
     ["paper", "scissors", "rock"].forEach((both) => {
         it(`should say draw for ${both} vs. ${both}`, () => {
             expect(game(both, both)).toBe("draw");
